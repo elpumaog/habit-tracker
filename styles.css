@@ -1,0 +1,226 @@
+/* styles.css */
+/* General Styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e1e1e; /* Slightly lighter dark container */
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Two columns: table on the left, content on the right */
+    gap: 24px; /* Space between columns */
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    grid-column: 1 / -1; /* Span across both columns */
+  }
+  
+  /* Table Section (Left Side) */
+  .table-section {
+    grid-column: 1; /* Place table in the first column */
+  }
+  
+  #habit-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  #habit-table th, #habit-table td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  #habit-table th {
+    background-color: #333;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  #habit-table td {
+    background-color: #2a2a2a;
+  }
+  
+  #habit-table input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  
+  /* Content Section (Right Side) */
+  .content-section {
+    grid-column: 2; /* Place content in the second column */
+    display: grid;
+    grid-template-rows: auto auto auto auto; /* Each row takes only the space it needs */
+    gap: 16px; /* Reduce the gap between elements */
+  }
+  
+  /* Add Habit Section */
+  .add-habit {
+    display: flex;
+    gap: 12px;
+    align-items: center; /* Align input and button vertically */
+    height: fit-content; /* Ensure the section only takes the height of its content */
+  }
+  
+  #habit-input {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  #habit-input:focus {
+    border-color: #6a11cb;
+  }
+  
+  #habit-input::placeholder {
+    color: #888;
+  }
+  
+  #add-habit-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #6a11cb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #add-habit-btn:hover {
+    background-color: #2575fc;
+  }
+  
+  /* Notes Section */
+  .notes-section {
+    display: grid;
+    gap: 16px;
+  }
+  
+  .notes-section textarea {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+  }
+  
+  .notes-section textarea:focus {
+    border-color: #6a11cb;
+  }
+  
+  .notes-section textarea::placeholder {
+    color: #888;
+  }
+  
+  /* Stats Section */
+  .stats {
+    padding: 16px;
+    background-color: #333;
+    border-radius: 8px;
+    text-align: center;
+    height: fit-content; /* Ensure the stats section only takes the height of its content */
+  }
+  
+  .stats p {
+    margin: 0;
+    font-size: 16px;
+    color: #e0e0e0;
+  }
+  
+  .stats span {
+    font-weight: 600;
+    color: #6a11cb;
+  }
+  
+  /* Export Button */
+  #export-pdf-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    background-color: #2575fc;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #export-pdf-btn:hover {
+    background-color: #6a11cb;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .add-habit {
+      flex-direction: column;
+    }
+  
+    #habit-input, #add-habit-btn {
+      width: 100%;
+    }
+  
+    #habit-table th, #habit-table td {
+      padding: 8px;
+    }
+  
+    .notes-section {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.75rem;
+    }
+  
+    #habit-table th, #habit-table td {
+      padding: 6px;
+      font-size: 14px;
+    }
+  
+    .stats p {
+      font-size: 14px;
+    }
+  }

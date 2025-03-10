@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Monthly Habit Tracker</h1>
+
+    <!-- Table Section (Left Side) -->
+    <div class="table-section">
+      <table id="habit-table">
+        <thead>
+          <tr>
+            <!-- Habit columns will be added dynamically -->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows for days of the month will be added dynamically -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Content Section (Right Side) -->
+    <div class="content-section">
+      <!-- Add Habit Section -->
+      <div class="add-habit">
+        <input type="text" id="habit-input" placeholder="Enter a new habit">
+        <button id="add-habit-btn">Add Habit</button>
+      </div>
+
+      <!-- Notes Section -->
+      <div class="notes-section">
+        <textarea id="daily-comments" placeholder="Daily comments"></textarea>
+        <textarea id="monthly-objectives" placeholder="Monthly objectives"></textarea>
+        <textarea id="achievements" placeholder="Achievements"></textarea>
+        <textarea id="learnings" placeholder="Learnings"></textarea>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="stats">
+        <p>Habits Completed: <span id="completed-count">0</span></p>
+        <p>Habits Missed: <span id="missed-count">0</span></p>
+        <p>Success Rate: <span id="success-rate">0%</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
